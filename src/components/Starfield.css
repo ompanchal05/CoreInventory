@@ -1,0 +1,59 @@
+/* ---------- SHARED STARFIELD BACKGROUND ---------- */
+
+.bg-starfield {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-star {
+  position: absolute;
+  border-radius: 50%;
+  background: #ffffff;
+  animation: bgTwinkle var(--twinkle-duration) ease-in-out var(--twinkle-delay) infinite;
+}
+
+.bg-star--bright {
+  background: #d1fae5;
+  box-shadow: 0 0 6px rgba(16, 185, 129, 0.6), 0 0 12px rgba(16, 185, 129, 0.2);
+}
+
+@keyframes bgTwinkle {
+  0%, 100% { opacity: var(--star-base, 0.3); transform: scale(1); }
+  50%      { opacity: 1; transform: scale(1.4); }
+}
+
+/* ---------- NEBULA GLOWS ---------- */
+
+.bg-nebula {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(100px);
+  z-index: 0;
+}
+
+.bg-nebula--1 {
+  width: 500px;
+  height: 500px;
+  top: -10%;
+  right: -5%;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.06) 0%, transparent 70%);
+  animation: bgNebulaDrift 20s ease-in-out infinite;
+}
+
+.bg-nebula--2 {
+  width: 400px;
+  height: 400px;
+  bottom: -8%;
+  left: -5%;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.04) 0%, transparent 70%);
+  animation: bgNebulaDrift 25s ease-in-out infinite reverse;
+}
+
+@keyframes bgNebulaDrift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%      { transform: translate(20px, -15px) scale(1.05); }
+  66%      { transform: translate(-15px, 10px) scale(0.95); }
+}

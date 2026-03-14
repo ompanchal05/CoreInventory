@@ -1,0 +1,17 @@
+/* Signup Page */
+
+.auth-card--wide {
+  max-width: 480px;
+}
+
+.signup-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+@media (max-width: 520px) {
+  .signup-row {
+    grid-template-columns: 1fr;
+  }
+}
